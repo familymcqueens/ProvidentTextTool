@@ -1,0 +1,12 @@
+1. Run AutoManager Reports->Report Builder->Complete Open Accounts Report
+2. From Report menu: Options -> Export -> 
+	Verify File Name: CompleteOpenAccounts
+	Verify Path: \\tsclient\c\Wwebserver\ProvidentTextTool
+3. Hit the 'Export' button, at the View File popup, hit 'No'.
+4. Click on 'ProvidentTextTool1' Icon
+5. Choose customers and then hit 'Submit Accounts for Texting'
+6. Softly press on 'ProvidentTextTool2' Icon to mail account to account
+7. From iPhone, select attached file and select the 'Copy to SA Group Text' Icon
+8. From the SA Group Text application, select the 'ProvidentTextTool_output.csv' file
+9. Then, softly press on 'ProvidentTextTool_output.csv' file
+10. Click on the send icon (paper airplane icon) on the bottom right hand corner of screen to send.
