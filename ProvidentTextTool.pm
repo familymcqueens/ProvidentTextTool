@@ -20,6 +20,23 @@ sub main_entry
 	WriteHtmlTableFooter($fileHandle,$homeDirectory,$amReport,$numAccounts,$phoneNumber);	
 }
 
+sub main_entry_lite
+{
+	my $fileHandle = $_[0];	
+	WriteHtmlBanner($fileHandle);
+}
+
+sub WriteHtmlBanner 
+{
+	my $fileHandle = $_[0];
+	
+	print $fileHandle "<html>\n<body>\n";
+	print $fileHandle "<title>","Provident Texting Utility","</title>\n";
+	print $fileHandle "<div style=\"display:block;text-align:left\">\n";
+	print $fileHandle "<a href=\"http://localhost/ProvidentTextTool/ProvidentTextTool.html\" imageanchor=1>\n";
+	print $fileHandle "<img align=\"left\" src=\"ProvidentTextTool.png\" border=0></a><h1><I>Provident Financial Texting Utility</I></h1><br>\n";	
+}
+
 sub WriteHtmlTopPage 
 {
 	my $fileHandle = $_[0];
@@ -27,11 +44,13 @@ sub WriteHtmlTopPage
 	my $lowerBound = $_[2];
 	my $upperBound = $_[3];
 	
-	print $fileHandle "<html>\n<body>\n";
-	print $fileHandle "<title>","Provident Texting Utility","</title>\n";
-	print $fileHandle "<div style=\"display:block;text-align:left\">\n";
-	print $fileHandle "<a href=\"http://localhost/ProvidentTextTool/ProvidentTextTool.html\" imageanchor=1>\n";
-	print $fileHandle "<img align=\"left\" src=\"ProvidentTextTool.png\" border=0></a><h1><I>Provident Financial Texting Utility</I></h1><br>\n";
+	#print $fileHandle "<html>\n<body>\n";
+	#print $fileHandle "<title>","Provident Texting Utility","</title>\n";
+	#print $fileHandle "<div style=\"display:block;text-align:left\">\n";
+	#print $fileHandle "<a href=\"http://localhost/ProvidentTextTool/ProvidentTextTool.html\" imageanchor=1>\n";
+	#print $fileHandle "<img align=\"left\" src=\"ProvidentTextTool.png\" border=0></a><h1><I>Provident Financial Texting Utility</I></h1><br>\n";
+	
+	WriteHtmlBanner($fileHandle);
 	
 	print $fileHandle "<form method=\"GET\" action=\"",$script,"\">\n";
 	print $fileHandle "Accounts From: <input type=\"number\" name=\"min\" min=\"1\"  max=\"999\" value=\"",$lowerBound,"\">&nbsp\n";

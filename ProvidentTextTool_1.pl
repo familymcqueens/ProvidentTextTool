@@ -14,7 +14,7 @@ my $phoneNumber          = ReadConfigFile($CFG_FILE_NAME,"phone_number");
 if (open(HTML_OUTPUT_FILE,'>',$HTML_FILE_NAME) == 0) {
 	   print "Error opening: ProvidentTextTool.html";
 	   exit -1;  
-	}
+}
 	
 main_entry(HTML_OUTPUT_FILE,$homeDirectory,$amReport,$daysLateLowerBound,$daysLateUpperBound,$phoneNumber);
 
