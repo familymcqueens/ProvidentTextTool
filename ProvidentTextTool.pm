@@ -116,7 +116,9 @@ sub WriteHtmlTableRows
 			my $mySpanish = "";
 			my $myEnglish = "checked";
 			
-			if (uc($textOk eq "SPANISH"))
+			$result = index((uc($textOk)),"SPANISH");
+			
+			if ($result ne -1)
 			{
 				$mySpanish = "checked";
 				$myEnglish = "";
