@@ -112,11 +112,21 @@ sub WriteHtmlTableRows
 				}
 				$phoneNumberToText = $homephone;		
 			}
+
+			my $mySpanish = "";
+			my $myEnglish = "checked";
+			
+			if (uc($textOk eq "SPANISH"))
+			{
+				$mySpanish = "checked";
+				$myEnglish = "";
+			}
+			
 			
 			print $fileHandle  "<tr>\n";	
 			print $fileHandle  "<td width=\"4%\" align=\"center\" bgcolor=\"#F3F781\"><input type=\"checkbox\" name=\"cust_",$numAccountsInRange,"_cb\" value=\"yes\" checked></td>\n"; 
-			print $fileHandle  "<td width=\"6%\" align=\"center\" bgcolor=\"#04B431\"><input type=\"radio\" name=\"cust_",$numAccountsInRange,"_lang\" value=\"english\" checked></td>\n";
-			print $fileHandle  "<td width=\"6%\" align=\"center\" bgcolor=\"#04B431\"><input type=\"radio\" name=\"cust_",$numAccountsInRange,"_lang\" value=\"spanish\"></td>\n";
+			print $fileHandle  "<td width=\"6%\" align=\"center\" bgcolor=\"#04B431\"><input type=\"radio\" name=\"cust_",$numAccountsInRange,"_lang\" value=\"english\" ",$myEnglish,"></td>\n";
+			print $fileHandle  "<td width=\"6%\" align=\"center\" bgcolor=\"#04B431\"><input type=\"radio\" name=\"cust_",$numAccountsInRange,"_lang\" value=\"spanish\" ",$mySpanish,"></td>\n";
 			print $fileHandle  "<td width=\"6%\" align=\"center\" bgcolor=\"#04B431\"><input type=\"radio\" name=\"cust_",$numAccountsInRange,"_lang\" value=\"both\"></td>\n";
 			print $fileHandle  "<td width=\"5%\" align=\"center\">",$dayslate,"</td>\n";
 			print $fileHandle  "<td width=\"5%\" align=\"center\">",$lastpaymentdate,"</td>\n";	
